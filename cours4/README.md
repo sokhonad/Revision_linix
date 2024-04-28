@@ -1,4 +1,4 @@
-# Script d'instalation centOS et server postgress
+# 1 Script d'instalation centOS et server postgress
 ```sh
 docker pull centos
 
@@ -51,7 +51,7 @@ CREATE TABLE userdb (
 # Requete INSERT 
 
 ```sh
-INSERT INTO userdb (username, email) VALUES ('Sokhona', 'sokhona@example.com');
+INSERT INTO userdb (username, email) VALUES ('Sokhona', 'sokhona@gmail.com');
 ```
 
 # Requete SELECT 
@@ -59,4 +59,6 @@ INSERT INTO userdb (username, email) VALUES ('Sokhona', 'sokhona@example.com');
 ```sh
 SELECT * FROM userdb;
 ```
+## Visualisation :
 
+![Exemple" (image)](exemple.png)
