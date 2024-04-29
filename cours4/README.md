@@ -59,6 +59,6 @@ INSERT INTO userdb (username, email) VALUES ('Sokhona', 'sokhona@gmail.com');
 ```sh
 SELECT * FROM userdb;
 ```
-## Visualisation :
+# Visualisation :
 
 ![Exemple" (image)](exemple.png)
