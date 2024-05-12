@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  centos:
+    image: centos
+    command: /bin/bash -c "cd /etc/yum.repos.d/ && \
+                            sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
+                            sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* && \
+                            yum update -y && \
+                            yum install -y java git wget unzip postgresql-server postgresql-contrib && \
+                            su - postgres -c 'initdb -D /var/lib/pgsql/data' && \
+                            su - postgres -c 'pg_ctl start' && \
+                            su - postgres -c 'psql' && \
+                            mkdir /opt/tomcat && \
+                            cd /opt/tomcat && \
+                            wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.88/bin/apache-tomcat-9.0.88.zip && \
+                            unzip apache-tomcat-9.0.88.zip && \
+                            useradd -r tomcat && \
+                            chown -R tomcat: /opt/tomcat/apache-tomcat-9.0.88 && \
+                            chmod +x /opt/tomcat/apache-tomcat-9.0.88/bin/*.sh && \
+                            su - tomcat -c '/opt/tomcat/apache-tomcat-9.0.88/bin/startup.sh'"
+    volumes:
+      - pgdata:/var/lib/pgsql/data
+
+volumes:
+  pgdata:
+
