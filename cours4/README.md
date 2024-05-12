@@ -103,7 +103,7 @@ psql -U userdb -d mywebapp -f /opt/deployment/database/db.sql
 
 ![Exemple" (image)](Capture.png)
 
-# Instalation
+# Instalation et exportation de l'application à l'exterieur du containeur
 
 ```sh
 docker pull diakarou/centosv2:centosv2
