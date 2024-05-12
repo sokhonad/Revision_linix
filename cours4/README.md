@@ -117,3 +117,6 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ID_
 ```sh
 Adresse_genere:8080
 ```
+# Schema Systeme:
+
+![Exemple" (image)](systeme.png)
